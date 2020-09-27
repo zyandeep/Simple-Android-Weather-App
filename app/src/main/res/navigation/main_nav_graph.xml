@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/forecastListFragment">
+
+    <fragment
+        android:id="@+id/locationEntryFragment"
+        android:name="me.zyan.androidtutorial.location.LocationEntryFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_location_entry" />
+    <fragment
+        android:id="@+id/forecastListFragment"
+        android:name="me.zyan.androidtutorial.forecast.DailyForecastFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_forecast_list" >
+        <action
+            android:id="@+id/action_forecastListFragment_to_locationEntryFragment"
+            app:destination="@id/locationEntryFragment" />
+        <action
+            android:id="@+id/action_forecastListFragment_to_forecastDetailsFragment"
+            app:destination="@id/forecastDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastDetailsFragment"
+        android:name="me.zyan.androidtutorial.details.ForecastDetailsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_forecast_details" >
+        <argument
+            android:name="temp"
+            app:argType="float"
+            android:defaultValue="0.00" />
+        <argument
+            android:name="desc"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="icon"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/weeklyForecastFragment"
+        android:name="me.zyan.androidtutorial.forecast.WeeklyForecastFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_weekly_forecast">
+        <action
+            android:id="@+id/action_weeklyForecastFragment_to_locationEntryFragment"
+            app:destination="@id/locationEntryFragment" />
+        <action
+            android:id="@+id/action_weeklyForecastFragment_to_forecastDetailsFragment"
+            app:destination="@id/forecastDetailsFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather Forecast App</string>
+    <string name="invalid_zipcode">Please enter valid location</string>
+    <string name="details_activity_title">Forecast Details</string>
+    <string name="temperature_settings">Temperature Unit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
